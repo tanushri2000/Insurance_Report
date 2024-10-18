@@ -1,6 +1,9 @@
 package com.tanu.controller;
 
+
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +23,22 @@ public class ReportController {
 	
 	@Autowired
 	private ReportServiceImpl service;
+	
+	@GetMapping("/excel")
+	public void exportExcel(HttpServletResponse response) throws Exception {
+		
+		
+		response.setContentType("application/octet-stream");
+		response.addHeader("Content-Disposition", "attachment; filename=citizenPlans.xlsx");
+		service.exportExcel(response);
+	}
+	
+	@GetMapping("/pdf")
+	public void exportPdf(HttpServletResponse response) throws Exception {
+		response.setContentType("application/pdf");
+		response.addHeader("Content-Disposition", "attachment;filename=citizenPlans.pdf");
+		service.exportPdf(response);
+	}
 	
 	@GetMapping("/")
 	public String indexPage(Model model) {

@@ -18,6 +18,7 @@
 <body>
 	<div class="pb-3 pt-3 container">
 		<h1>Insurance Report</h1>
+
 		<form:form action="search" modelAttribute="search" method="POST">
 
 			<tr>
@@ -39,10 +40,10 @@
 						<form:option value="Male">Male</form:option>
 						<form:option value="Fe-Male">Fe-Male</form:option>
 					</form:select></td>
-
 			</tr>
-			</br>
-			</br>
+
+			<br />
+			<br />
 
 			<tr>
 				<td>Start Date:</td>
@@ -52,11 +53,11 @@
 				<td><form:input path="endDate" type="Date" /></td>
 
 			</tr>
-			</br>
-			</br>
+			<br />
+			<br />
 
 			<tr>
-			    <a  class="btn btn-secondary" href="/">Reset</a>
+				<a class="btn btn-secondary" href="/">Reset</a>
 				<form:button class="btn btn-primary">Search</form:button>
 			</tr>
 
@@ -78,8 +79,6 @@
 
 				</thead>
 				<tbody>
-	
-
 					<c:forEach items="${plansList}" var="plans" varStatus="index">
 						<tr>
 							<td>${index.count}</td>
@@ -91,32 +90,33 @@
 							<td>${plans.startDate}</td>
 							<td>${plans.endDate}</td>
 							<td>${plans.benefitAmount}</td>
-					  </tr>
-				   </c:forEach>
-				   
-                      <tr>
-						<c:if test="${empty plansList}" >
-                              <td colspan="9" style="text-align:center"> No Data Found </td>
-                        </c:if>
-                     </tr>
+						</tr>
+					</c:forEach>
 
-             </tbody>
+					<tr>
+						<c:if test="${empty plansList}">
+							<td colspan="9" style="text-align: center">No Data Found</td>
+						</c:if>
+					</tr>
+
+				</tbody>
 			</table>
 
 			<hr />
 
 			<tr>
 				<td>Export:</td>
-				<td><a href="">Excel</a></td>&nbsp;
-				<td><a href="">Pdf</a></td>
+				<td><a href="/excel">Excel</a></td>
+				<td><a href="/pdf">Pdf</a></td>
 			</tr>
+
 
 
 
 		</form:form>
 
 
-</div>
+	</div>
 
 
 
@@ -124,7 +124,7 @@
 
 
 
-<script
+	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>

@@ -1,4 +1,4 @@
-package com.tanu.controller;
+package com.ies.rest;
 
 
 import java.util.List;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.tanu.entity.CitizenPlans;
-import com.tanu.request.SearchRequest;
-import com.tanu.service.ReportServiceImpl;
+import com.ies.entity.CitizenPlans;
+import com.ies.request.SearchRequest;
+import com.ies.service.ReportService;
 
 
 
@@ -22,7 +22,7 @@ import com.tanu.service.ReportServiceImpl;
 public class ReportController {
 	
 	@Autowired
-	private ReportServiceImpl service;
+	private ReportService service;
 	
 	@GetMapping("/excel")
 	public void exportExcel(HttpServletResponse response) throws Exception {

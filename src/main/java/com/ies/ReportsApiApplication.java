@@ -1,13 +1,13 @@
-package com.tanu;
+package com.ies;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class InsuranceReportApplication {
+@SpringBootApplication(scanBasePackages = "com.tanu")
+public class ReportsApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InsuranceReportApplication.class, args);
+		SpringApplication.run(ReportsApiApplication.class, args);
 	}
 
 }

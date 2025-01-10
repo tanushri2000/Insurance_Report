@@ -6,14 +6,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.10</version>
+		<version>3.3.6</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.tanu</groupId>
-	<artifactId>Insurance_Report</artifactId>
+	<groupId>com.ies</groupId>
+	<artifactId>REPORTS_API</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<name>Insurance_Report</name>
+	<packaging>jar</packaging>
+	<name>REPORTS_API</name>
 	<description>Demo project for Spring Boot</description>
 	<url />
 	<licenses>
@@ -73,12 +73,12 @@
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
 		</dependency>-->
-
+<!--
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			
-		</dependency>
+
+		</dependency>-->
 
 		<!-- excel export -->
 		<dependency>
@@ -115,6 +115,11 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.4.0.905</version>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
